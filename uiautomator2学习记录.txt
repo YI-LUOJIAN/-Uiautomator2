@@ -1,0 +1,27 @@
+1.在主页下，获取driver前要有延时
+dg = DemoGoogle()
+time.sleep(5)
+driver = dg.get_driver()
+
+2.启动谷歌setting页面
+dg.start_app(package_name="com.android.tv.settings", activity="com.android.tv.settings.MainSettings")
+注：package_name的获取方式为：在CMD输入：adb shell dumpsys activity | findstr  "realActivity"  或者 点开setting页面，运行代码driver.current_app()也可以获取到
+
+3.寻找Apps
+device = dg.find_element_by_text("Apps")
+print(device.info)
+---
+{'bounds': {'bottom': 121, 'left': 833, 'right': 1205, 'top': 36}, 'childCount': 0, 'className': 'android.widget.TextView', 'contentDescription': '', 'packageName': 'com.android.tv.settings', 'text': 'Apps', 'visibleBounds': {'bottom': 121, 'left': 833, 'right': 1205, 'top': 36}, 'checkable': False, 'checked': False, 'clickable': False, 'enabled': True, 'focusable': False, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+---
+print(device.click())
+
+4.关于截图
+driver有screenshot，但是device没有
+
+5.进入媒体中心
+{'package': 'com.tcl.ui_mediaCenter', 'activity': 'com.tcl.ui_mediaCenter.main.MainActivity'}
+
+6.进入Googlesetting主页面
+{'package': 'com.google.android.tvlauncher', 'activity': 'com.google.android.tvlauncher.HomeScreen'}
+
+6.在CMD里输入"python -m weditor"可以启动网页查看控件的元素，但是前提是首先adb连接成功(TUiAutoMator实例化)
