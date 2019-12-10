@@ -1,0 +1,11 @@
+1.主体介绍UiautoMator2
+https://www.jianshu.com/p/e5ed2ddb3f27
+
+2.UiautoMator2与Appium区别总结
+https://www.cnblogs.com/yyoba/p/9675071.html
+
+3.用于自动化测试的UiautoMator2
+https://testerhome.com/topics/11357
+
+4.UiautoMator2-Server的运行原理
+https://testerhome.com/topics/9240
